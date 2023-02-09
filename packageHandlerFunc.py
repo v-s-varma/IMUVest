@@ -17,5 +17,5 @@ def package_handler_raw(tup):
         elif pos >= 6:
             #Magnetometer (Gauss)
             out.append(x)
-            
+    print(out)
     return out

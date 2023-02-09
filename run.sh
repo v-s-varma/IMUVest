@@ -1,13 +1,7 @@
-#!/bin/bash
-trap "exit" INT TERM ERR
-trap "kill 0" EXIT
+pkill notochord
 
-#echo "Arg1: NUC, Arg2: Teensy, Arg3: VICON. Both arguments are true/false all lowercase."
+(cd ../notochord/bin ; ./notochord --scan --raw --no_bundles --odr=25 -y localhost)&
 
-#sleep 1
+sleep 3
 
-(cd ../notochord/bin ; ./notochord --scan --raw --no_bundles --odr=97 -y localhost)&
-
-sleep 6
-
-./variableSensorMain.py #$1 $2 $3 #>/dev/null
+python3 IMUVest.py
